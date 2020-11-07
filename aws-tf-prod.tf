@@ -4,7 +4,7 @@ provider "aws" {
   
 resource "aws_instance" "test_VM" {
   # CentOS Linux 6 x86_64 HVM EBS 1703_011
-  ami           = "ami-09e33dae3dfb2947a" 
+  ami           = "ami-0d3c4543a87d7a85b" 
   instance_type = "t2.small"
   availability_zone = "eu-west-2a"
 
