@@ -1,14 +1,16 @@
 provider "aws" {
-  region = "eu-west-2"
-}
-  
-resource "aws_instance" "test_VM" {
-  # CentOS Linux 6 x86_64 HVM EBS 1703_011
-  ami           = "ami-0d3c4543a87d7a85b" 
-  instance_type = "t2.small"
-  availability_zone = "eu-west-2a"
+   region = "eu-central-1"
+ }
+ resource "aws_instance" "test_VM" {
+   # Amazon Linux AMI 2017.03.1 (HVM)
+   ami           = "ami-657bd20a"
+   instance_type = "t2.micro"
 
-  tags {
-    Name = "at-template_for_demo_prep"
-  }
-}
+   tags {
+     Name = "${var.vm_name}"
+   }
+ }
+
+ variable "vm_name" {
+   description = "Name for VM to be created"
+ }
